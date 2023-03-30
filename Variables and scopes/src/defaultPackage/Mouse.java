@@ -1,6 +1,13 @@
 package defaultPackage;
 
 public class Mouse {
+    /**
+     * Package declaration - should always be the first line of a file
+     * import statements - should immediately follow the package line
+     * Class declaration - should go immediately after import statements
+     * Field declarations (int a;) - anywhere inside a class
+     * Method declarations - Anywhere inside a class
+     */
     static int MAX_LENGTH = 5; // class variable
     // stays in scope until the program ends
     int length; // instance variable
