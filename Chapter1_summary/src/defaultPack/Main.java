@@ -1,3 +1,5 @@
+package defaultPack;
+
 public class Main {
     /**
      * CHAPTER 1 OBJECTIVES

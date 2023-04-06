@@ -101,3 +101,42 @@ C. 2
 D. 3
 E. 4 - CORRECT
 F. Does not compile.
+
+7. Given the following classes, which of the following snippets can be inserted in place of:
+ INSERT IMPORTS HERE and have the code compile?
+ (choose all that apply)
+
+ package aquarium;
+ public class Water{
+ boolean salty = false;
+ }
+ package aquarium.jellies;
+ public class Water{
+ boolean salty = true;
+ }
+ package employee;
+ INSERT IMPORTS HERE
+
+ public class WaterFiller{
+ Water water;
+ }
+
+ A: import aquarium.*;
+ B: import aquarium.Water;
+ import aquarium.jellies;
+ C: import aquarium.*;
+ import aquarium.jellies.Water;
+ D: import aquarium.*;
+ import aquarium.jellies.*;
+ E: import aquarium.Water;
+ import aquarium.jellies.water;
+ F: None of these can make the code to compile.
+
+ 8: Given the following class, which of the following calls print out Blue Jay?
+    choose all that appy
+
+    public class BirdDisplay{
+    public static void main(String[] name) {
+    System.out.println(name[1]);
+    }
+    }
