@@ -1,4 +1,5 @@
 package firstPackage;
+import java.util.ArrayList;
 import java.util.Random;
 import  java.util.Scanner;
 class Main {
@@ -7,44 +8,41 @@ class Main {
         Random random1 = new Random();
         System.out.println("How Many Array Elements do you want to be printed");
         int maxIndex = scanner.nextInt();
-        int[] numToSort =new int[maxIndex];
+        ArrayList<Integer> numToSort = new ArrayList<Integer>();
         for (int i = 0; i < maxIndex; i++){
-            numToSort[i] = random1.nextInt(100);
+            numToSort.add(random1.nextInt(100));
         }
         System.out.println("The unsorted array elements are: \n");
-        for (int i = 0; i< numToSort.length; i++){
-            System.out.print(numToSort[i]+"\t");
-        }
+        System.out.println(numToSort);
         System.out.println();
-        System.out.println("Sorting the Array:::!!!!!!!! \n");
+        System.out.println("Sorting the Arraylist:::!!!!!!!! \n");
         insertionSort(numToSort);
     }
     /**
      * Start of a Method body
      * @param inputArray
      */
-    public static void insertionSort(int[] inputArray){
-            int b=1;
-        while (b<=inputArray.length-1) {
-            // b is responsible for repeating the same process for a stage multiple times depending on array length{ // 5 1
-            //System.out.println("Main Loop Started and array Length is "+inputArray.length);
-            for(int i = 1; i < inputArray.length; i++) {
-                if (inputArray[i] < inputArray[i - 1]) {
-                    int nextInd = inputArray[i];
-                    int prevInd = inputArray[i - 1];
-                    inputArray[i] = prevInd;
-                    inputArray[i - 1] = nextInd;
+    public static void insertionSort(ArrayList<Integer> inputArray){
+        int b=1;
+        while (b<=inputArray.size()-1) {
+            // b is responsible for repeating the same process for a stage multiple times depending on array length{
+            for(int i = 1; i < inputArray.size(); i++) {
+                if (inputArray.get(i) < inputArray.get(i-1)) {
+                    int nextInd = inputArray.get(i);
+                    int prevInd = inputArray.get(i - 1);
+                    inputArray.set(i, prevInd);
+                    inputArray.set(i - 1, nextInd);
                 }
             }
+
             b++;
         }
-        for (int x = 0; x < inputArray.length; x++) {
-            System.out.print("\t" + inputArray[x]);
-        }
+        System.out.println("Sorted array below:\n");
+        System.out.println(inputArray);
 
-            }
+    }
 
-        }
+}
 
 
 
